@@ -16,3 +16,26 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/new/luci-app-openclash
+
+#添加server酱
+#git clone -b master --single-branch https://github.com/tty228/luci-app-serverchan package/new/luci-app-serverchan
+git clone https://github.com/zzsj0928/luci-app-pushbot.git package/new/luci-app-pushbot
+
+#添加oled
+git clone -b master --single-branch https://github.com/NateLol/luci-app-oled package/new/luci-app-oled
+mv package/new/luci-app-oled/po/zh_Hans package/new/luci-app-oled/po/zh-cn
+
+#替换京东签到
+rm -rf package/lean/luci-app-jd-dailybonus
+git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/new/luci-app-jd-dailybonus
+
+#替换argon主题
+rm -rf package/lean/luci-theme-argon
+git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/new/luci-theme-argon
+
+#添加edge主题
+git clone -b 18.06 --single-branch https://github.com/garypang13/luci-theme-edge.git package/new/luci-theme-edge
+
+#添加甜糖星愿自动采集
+git clone https://github.com/jerrykuku/luci-app-ttnode.git  package/new/luci-app-ttnode
